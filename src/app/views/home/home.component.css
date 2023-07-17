@@ -1,0 +1,75 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.img-profile{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+.page-section-principal{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(0deg,  #21252f 0%,  #343a40 95%);
+    overflow: hidden;
+    padding: 30px;
+    color: #fff;
+}
+nav{
+    position: sticky;
+}
+app-nav{
+    width: 100%;
+}
+
+.img-mask{
+    z-index: 2;
+    position: relative;
+}
+.img-mask::before,
+.circuit-mask{
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    content: '';
+    display: block;
+    width: 800px;
+    height: 800px;
+}
+
+.img-mask::before{
+    background: url(../../../assets/img/circuito2.png) no-repeat;
+}
+.circuit-mask{
+    display: grid;
+    place-items: center;
+    -webkit-mask: url(../../../assets/img/circuito2.png);
+    mask: url(../../../assets/img/circuito2.png);
+}
+.circuit-mask::before{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 3px solid #00f0ff;
+    border-radius: 50%;
+    animation: expand 5s infinite;
+}
+@keyframes expand{
+    0% {
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(8);
+    }
+    
+}
